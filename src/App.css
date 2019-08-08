@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+.product{
+  border: 1px solid #DCDCDC;
+}
+img{
+  /* height: 220px !important;
+  width: 255px !important;
+  position: relative; */
+}
+/* .product .product .product-price, .product, .fa-star-o{
+font-size: 25px;
+} */
+.product .discount-badge{
+  height: 66px;
+  width: 66px;
+  position: absolute;
+  top: 15px;
+  left: 185px;
+}
+.product .discount-value {
+  color: #fff;
+}
+.product .product-name {
+font-family: Arial;
+font-size: 27px;
+color: #222222;
+font-weight: 400;
+text-decoration: none solid rgb(34, 34, 34);
+}
+.product .numeric-rating {
+width: 47px;
+height: 27px;
+font-family: Arial;
+font-size: 23px;
+color: #222222;
+font-weight: 400;
+text-decoration: none solid rgb(34, 34, 34);
+position: absolute;
+}
+.product .product-description {
+font-family: Arial;
+font-size: 14px;
+color: #000000;
+font-weight: 400;
+text-decoration: none solid rgb(0, 0, 0);
+line-height: 21px;
+}
+.product .product-price {
+font-family: Arial;
+font-size: 23px;
+color: #222222;
+font-weight: 400;
+text-decoration: none solid rgb(34, 34, 34);
+}
+.dummy-image {
+  width: 100%;
+  height: 100%;
+}
+.product .add-to-cart {
+  width: 130px;
+height: 34px;
+border: 1px solid #357ebd;
+border-radius: 4px;
+background-color: #428bca;
+background-repeat: no-repeat;
+font-family: Arial;
+font-size: 14px;
+color: #ffffff;
+font-weight: 400;
+text-decoration: none solid rgb(255, 255, 255);
+text-align: center;
+}
