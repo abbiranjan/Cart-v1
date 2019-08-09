@@ -23,36 +23,36 @@ font-size: 25px;
   color: #fff;
 }
 .product .product-name {
-font-family: Arial;
-font-size: 27px;
-color: #222222;
-font-weight: 400;
-text-decoration: none solid rgb(34, 34, 34);
-}
+  font-family: Arial;
+  font-size: 27px;
+  color: #222222;
+  font-weight: 400;
+  text-decoration: none solid rgb(34, 34, 34);
+  }
 .product .numeric-rating {
-width: 47px;
-height: 27px;
-font-family: Arial;
-font-size: 23px;
-color: #222222;
-font-weight: 400;
-text-decoration: none solid rgb(34, 34, 34);
-position: absolute;
+  width: 47px;
+  height: 27px;
+  font-family: Arial;
+  font-size: 23px;
+  color: #222222;
+  font-weight: 400;
+  text-decoration: none solid rgb(34, 34, 34);
+  position: absolute;
 }
 .product .product-description {
-font-family: Arial;
-font-size: 14px;
-color: #000000;
-font-weight: 400;
-text-decoration: none solid rgb(0, 0, 0);
-line-height: 21px;
+  font-family: Arial;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none solid rgb(0, 0, 0);
+  line-height: 21px;
 }
 .product .product-price {
-font-family: Arial;
-font-size: 23px;
-color: #222222;
-font-weight: 400;
-text-decoration: none solid rgb(34, 34, 34);
+  font-family: Arial;
+  font-size: 23px;
+  color: #222222;
+  font-weight: 400;
+  text-decoration: none solid rgb(34, 34, 34);
 }
 .dummy-image {
   width: 100%;
@@ -60,15 +60,48 @@ text-decoration: none solid rgb(34, 34, 34);
 }
 .product .add-to-cart {
   width: 130px;
-height: 34px;
-border: 1px solid #357ebd;
-border-radius: 4px;
-background-color: #428bca;
-background-repeat: no-repeat;
-font-family: Arial;
-font-size: 14px;
-color: #ffffff;
-font-weight: 400;
-text-decoration: none solid rgb(255, 255, 255);
-text-align: center;
+  height: 34px;
+  border: 1px solid #357ebd;
+  border-radius: 4px;
+  background-color: #428bca;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none solid rgb(255, 255, 255);
+  text-align: center;
+}
+.item-selected {
+  display: inline-block;
+  width: 32px;
+  height: 30px;
+  padding: 0px 10px;
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  background-size: cover;
+  font-family: Arial;
+  font-size: 14px;
+  color: #474747;
+  font-weight: 400;
+  text-decoration: none solid rgb(71, 71, 71);
+}
+.remove-item, .add-item {
+}
+.hand{
+  cursor: pointer
+}
+.remove-from-cart {
+  width: 130px;
+  height: 34px;
+  border: 1px solid #357ebd;
+  border-radius: 4px;
+  background-color: #fc5353;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none solid rgb(255, 255, 255);
+  text-align: center;
 }
