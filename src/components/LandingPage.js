@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 function LandingPage() {
     const [product, setProduct] = useState([]);
+    const [addedItem, activateAddedItem] = useState(true);
     useEffect(() =>{
-        axios.get('mockjson/data.js')
+        axios.get('mockjson/data.json')
         .then(res => {
             console.log(res.data);
             setProduct(res.data);
@@ -12,15 +13,37 @@ function LandingPage() {
             console.log('error from server--', err)
         })
     },[])
+    const removeItem = (index) => {
+        if(product[index].selectedItem === 0) {
+            product[index].selectedItem = 0;
+        } else {
+            product[index].selectedItem = product[index].selectedItem-1;
+            setProduct([...product])
+        }
+    }
+    const addItem = (index) => {
+        product[index].selectedItem =  product[index].selectedItem+1;
+        setProduct([...product])
+    }
+    const onAddingItem = (index) => {
+        console.log(index);
+        product[index].addToCart =true;
+        setProduct([...product])
+    }
+    const onRemovingItem = (index) => {
+        console.log(index);
+        product[index].addToCart =false;
+        setProduct([...product])
+    }
    
     return (
             <div className="container mt-1">
                 <div className="row">
                     {/* <div className='col-sm-4'></div> */}
-                    {product.map((pro) =>{
+                    {product.map((pro, index) =>{
                         return(
                             //  <div className="col-sm-8">
-                                <div className="product p-2 rounded-lg col-sm mr-2" key={pro.id}> 
+                                <div className="product p-2 rounded-lg col-sm mr-2" key={index}> 
                                     <div className='product-image'>
                                     <img src='https://via.placeholder.com/240' className="dummy-image" alt={pro.imageUrl}/>
                                      {/* Condition for checking discount from service, if greater than 0, then display */}
@@ -44,10 +67,30 @@ function LandingPage() {
                                         <span className="numeric-rating pl-1">({pro.rating})</span> 
                                     </div>
                                     <div className='product-price text-left pt-4'>${pro.price}</div>
-                                    <button type='button' className='add-to-cart float-left mt-3'>Add to Cart</button>
+                                    <div className="mt-3">
+                                        {pro.addToCart === false ?
+                                         <button type='button' 
+                                                className='add-to-cart float-left'
+                                                onClick={onAddingItem.bind(this, index)}>
+                                                Add to Cart
+                                        </button> : 
+                                        <button type='button' 
+                                                className='remove-from-cart float-left'
+                                                onClick={onRemovingItem.bind(this, index)}>
+                                                Remove from Cart
+                                        </button>} 
+                                        <span className=''>
+                                            <span className='remove-item hand' onClick={(e) =>removeItem(e.target.id)}>
+                                                <img src='assets/FontAwesome47.svg' id ={index} alt='Remove Item'></img>
+                                            </span>
+                                            <span className='item-selected justify-content-center align-items-center'>{pro.selectedItem}</span>
+                                            <span className='add-item ml-2 hand'  onClick={(e) => addItem(e.target.id)}>
+                                                <img src='assets/PixleIcon.svg' id={index} alt='Add Item'></img>
+                                            </span>
+                                        </span>
+                                    </div>
                                 </div>
                             //  </div>
-                             
                         )
                     })}
                     
