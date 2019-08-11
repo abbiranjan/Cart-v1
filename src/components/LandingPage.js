@@ -4,7 +4,7 @@ function LandingPage() {
     const [product, setProduct] = useState([]);
     const [addedItem, activateAddedItem] = useState(true);
     useEffect(() =>{
-        axios.get('mockjson/data.json')
+        axios.get('mockjson/data.js')
         .then(res => {
             console.log(res.data);
             setProduct(res.data);
@@ -36,14 +36,16 @@ function LandingPage() {
         setProduct([...product])
     }
    
-    return (
-            <div className="container mt-1">
-                <div className="row">
-                    {/* <div className='col-sm-4'></div> */}
-                    {product.map((pro, index) =>{
-                        return(
-                            //  <div className="col-sm-8">
-                                <div className="product p-2 rounded-lg col-sm mr-2" key={index}> 
+    return ( <div className="container"> 
+                <div className="">
+                            <div className="row">
+                            <div className="col-sm-2 col-md-2">Filter Area</div>
+                              <div className="col-sm-10 col-md-10">
+                              <div className="row">
+                              {product.map((pro, index) =>{ 
+                                return(
+                                    <React.Fragment>
+                                    <div className="product p-2 rounded-lg col-sm-3 col-md-3" key={index}> 
                                     <div className='product-image'>
                                     <img src='https://via.placeholder.com/240' className="dummy-image" alt={pro.imageUrl}/>
                                      {/* Condition for checking discount from service, if greater than 0, then display */}
@@ -90,13 +92,15 @@ function LandingPage() {
                                         </span>
                                     </div>
                                 </div>
-                            //  </div>
-                        )
-                    })}
-                    
+                                </React.Fragment>
+                                )
+                                })}
+                                </div>
+                             </div>
+                             </div>
                 </div>
-            </div>
+             </div>
     )
 }
 
-export default LandingPage
+export default LandingPage;
