@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+
 function LandingPage() {
     const [product, setProduct] = useState([]);
     const [addedItem, activateAddedItem] = useState(true);
+    const [cartItemNumber, modifyCartItem]  = useState(0);
     useEffect(() =>{
-        axios.get('mockjson/data.js')
+        axios.get('mockjson/data.json')
         .then(res => {
             console.log(res.data);
             setProduct(res.data);
@@ -17,11 +19,13 @@ function LandingPage() {
         if(product[index].selectedItem === 0) {
             product[index].selectedItem = 0;
         } else {
+            // modifyCartItem(cartItemNumber-1);
             product[index].selectedItem = product[index].selectedItem-1;
             setProduct([...product])
         }
     }
     const addItem = (index) => {
+        // modifyCartItem(cartItemNumber+1);
         product[index].selectedItem =  product[index].selectedItem+1;
         setProduct([...product])
     }
@@ -36,16 +40,63 @@ function LandingPage() {
         setProduct([...product])
     }
    
-    return ( <div className="container"> 
-                <div className="">
-                            <div className="row">
-                            <div className="col-sm-2 col-md-2">Filter Area</div>
-                              <div className="col-sm-10 col-md-10">
-                              <div className="row">
-                              {product.map((pro, index) =>{ 
-                                return(
-                                    <React.Fragment>
-                                    <div className="product p-2 rounded-lg col-sm-3 col-md-3" key={index}> 
+    return (
+        <React.Fragment>
+            <div className="container-fluid">
+                <div className="row">
+                    <header className='header-part col-sm-12 col-md-12 d-flex justify-content-between'>
+                        <div className="poc-shop align-self-center">Poc Shop</div>
+                        <div className="align-self-center cart-container d-flex"> 
+                                <input type="text" className="search-bar"/>
+                            <div className="align-self-center">
+                                <img src='assets/MaterialIcon.svg' alt='cart-icon'></img>
+                                <span className="total-cart-item">({cartItemNumber})</span>
+                            </div>
+                         </div> 
+                    </header>
+                </div>
+            </div>
+            <div className="container-fluid content-wrapper mt-1">
+                <div className="row ml-0 mr-0">
+                   <div className='col-sm-2 col-md-2 my-row'> 
+                   {/* <div className="container filter-section">
+                       <div className="row">
+                            <div className="col filter-header">
+                               Filters
+                            </div>
+                            <div className="w-100"></div>
+                            <div className="col single-filter">
+                                Category
+                            </div>
+                            <div className="w-100"></div>
+                            <div className="col single-filter">
+                                Price
+                            </div>
+                            <div className="w-100"></div>
+                            <div className="col single-filter">
+                                Rating
+                            </div>
+                            <div className="w-100"></div>
+                            <div className="col single-filter">
+                                Discounts / Offers
+                            </div>
+                            <div className="w-100"></div>
+                        </div>
+                    </div> */}
+                    <div className="d-flex flex-column filter-section">
+                        <div className="p-2 filter-header">Filters</div>
+                        <div className="p-2 single-filter">Category</div>
+                        <div className="p-2 single-filter">Price</div>
+                        <div className="p-2 single-filter">Rating</div>
+                        <div className="p-2"> Discounts / Offers</div>
+                    </div>
+                   </div>
+                   <div className="col-sm-10 col-md-10">
+                   <div className="row my-row">
+                    {product.map((pro, index) =>{
+                        return(
+                              
+                                <div className="product p-2 rounded-lg col-sm-3 my-col-3" key={index}> 
                                     <div className='product-image'>
                                     <img src='https://via.placeholder.com/240' className="dummy-image" alt={pro.imageUrl}/>
                                      {/* Condition for checking discount from service, if greater than 0, then display */}
@@ -92,15 +143,14 @@ function LandingPage() {
                                         </span>
                                     </div>
                                 </div>
-                                </React.Fragment>
-                                )
-                                })}
-                                </div>
-                             </div>
-                             </div>
+                        )
+                    })}
+                    </div>
+                    </div>
                 </div>
-             </div>
+                </div>
+        </React.Fragment>    
     )
 }
 
-export default LandingPage;
+export default LandingPage
