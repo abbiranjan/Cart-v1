@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 .product{
   border: 1px solid #DCDCDC;
 }
@@ -104,4 +101,80 @@ font-size: 25px;
   font-weight: 400;
   text-decoration: none solid rgb(255, 255, 255);
   text-align: center;
+}
+.header-part {
+   /* position: fixed;  */
+    height: 100px;
+    padding-left: 45px;
+    padding-right: 55px;
+    border-bottom: 1px solid #666666;
+    background-color: #fff;
+    background-size: cover;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 85px;
+}
+.poc-shop {
+  width: 488px;
+  height: 50px;
+  font-family: Arial;
+  font-size: 44px;
+  color: #6f6f6f;
+  font-weight: 400;
+  text-decoration: none solid rgb(111, 111, 111);
+}
+.search-bar {
+  width: 354px;
+  height: 56px;
+  padding: 0px 10px;
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  background-size: cover;
+  font-family: Arial;
+  font-size: 14px;
+  color: #474747;
+  font-weight: 400;
+  text-decoration: none solid rgb(71, 71, 71);
+  margin-right: 30px;
+}
+.total-cart-item {
+  width: 47px;
+  height: 27px;
+  font-family: Arial;
+  font-size: 23px;
+  color: #222222;
+  font-weight: 400;
+  text-decoration: none solid rgb(34, 34, 34);
+}
+/* .my-md-2 {
+  border: 1px dashed red;
+}
+.my-md-10 {
+  border: 1px dashed greenyellow;
+} */
+.content-wrapper {
+  padding: 0 50px 0;
+}
+/* .my-row {
+  border: 1px dashed red;
+} */
+/* .my-col-3 {
+  border: 1px solid green;
+} */
+.filter-section {
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+}
+.single-filter {
+  /* padding: 0px 15px; */
+  height: 42px;
+  border-bottom: 1px solid #DCDCDC;
+}
+.filter-header {
+  height: 42px;
+  background-color: #428bca;
+  font-family: Arial;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none solid rgb(255, 255, 255);
 }
